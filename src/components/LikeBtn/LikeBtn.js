@@ -15,13 +15,12 @@ export default function LikeBtn() {
    <section>
      <ul className={styles.iconList}>
        <li className={styles.iconItem}>
-         <a
-           href="#"
+         <button
            className={`${styles.iconLink} ${clicked ? styles.clicked : ''}`}
            onClick={handleClick}
          >
            ♡
-         </a>
+         </button>
        </li>
      </ul>
    </section>

@@ -6,7 +6,7 @@ export default function HomePage() {
     const [posts, setPosts] = useState([]);
     const [projectTitle, setProjectTitle] = useState('');
     const [projectDescription, setProjectDescription] = useState('');
-    const [gitHubLink, setGitHubLink] = useState('');
+    const [githubLink, setGithubLink] = useState('');
     const [image, setImage] = useState('')
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
@@ -50,14 +50,14 @@ export default function HomePage() {
 
     const handleCreatePost = async (event) => {
         event.preventDefault();
-        const postData = { projectTitle, projectDescription, gitHubLink, image };
+        const postData = { projectTitle, projectDescription, githubLink, image };
         
         try {
             const newPost = await createPost(postData);
             setPosts(currentPosts => [newPost, ...currentPosts]);
             setProjectTitle('');
             setProjectDescription('');
-            setGitHubLink('');
+            setGithubLink('');
             setImage('');
         } catch (error) {
             console.error('Error creating post:', error);
@@ -89,8 +89,8 @@ export default function HomePage() {
                 />
                 <input
                     type="text"
-                    value={gitHubLink}
-                    onChange={(e) => setGitHubLink(e.target.value)}
+                    value={githubLink}
+                    onChange={(e) => setGithubLink(e.target.value)}
                     placeholder="GitHub Link"
                 />
                 <input

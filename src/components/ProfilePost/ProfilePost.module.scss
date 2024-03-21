@@ -1,0 +1,46 @@
+.ProfilePost {
+    display: flex;
+    min-height: 30rem;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: .5rem;
+    margin: 2rem 0;
+    padding: 2rem;
+    border: .1rem solid lightgrey;
+    box-shadow: 0 0 .3rem darkgreen;
+    position: relative;
+    .TitleImgContainer {
+        display: flex;
+        flex-direction: column;
+        .ProjectImage {
+            width: 100%;
+            height: 100%;
+        }
+        .ProjectTitle {
+            font-size: 2vw;
+        }
+    }
+    .ProjectDescription {
+        font-size: 1vw;
+    }
+    .ProjectLogo {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 5rem;
+    }
+    .deleteBtn {
+        background-color: white;
+        border-radius: 0;
+        border: none;
+        width: auto;
+        color: blue;
+        font-size: 1rem;
+        font-weight: 200;
+        transition: .3s ease;
+        &:hover {
+            text-decoration: underline;
+            transition: .3s ease;
+        }
+    }
+}

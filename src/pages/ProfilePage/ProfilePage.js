@@ -13,7 +13,7 @@ const ensureHttps = (url) => {
   return url;
 };
 
-export default function ProfilePage() {
+export default function ProfilePage(fetchPosts) {
     const { id } = useParams();
     const [user, setUser] = useState(null);
     const [posts, setPosts] = useState([]);
@@ -83,11 +83,12 @@ export default function ProfilePage() {
                         )}
                     </div>
                     <FollowList 
-                        user={user}
+                        posts={posts}
                     />
                 </div>
                 <ProfilePostList 
                     posts={posts}
+                    fetchPosts={fetchPosts}
                 />
             </div>
         </>

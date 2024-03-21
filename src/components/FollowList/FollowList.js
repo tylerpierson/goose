@@ -1,25 +1,26 @@
-import styles from './FollowList.module.scss'
+import React from 'react';
+import styles from './FollowList.module.scss';
+import Follow from '../Follow/Follow';
 
-export default function FollowList(user){
+const EmptyState = () => (
+    <div className={styles.emptyState}>No posts available.</div>
+);
+
+export default function FollowList({ posts }) {
+    // Check if posts array is empty
+    if (posts.length === 0) {
+        return <EmptyState />;
+    }
+
     return (
-        <div className={styles.followsContainer}>
-            {user && user.userType === 'employer' ? <h3>Following</h3> : <h3>Employers</h3>}
-            <div className={styles.follows}>
-                <div className={styles.followsContent}>
-                    <img className={styles.followImg} src="https://i.imgur.com/C2VpXHd.png"/>
-                    <div className={styles.userInfo}>
-                        <h4 className={styles.followName}>User's Name</h4>
-                        <h5 className={styles.followCompany}>User's Company</h5>
-                    </div>
-                </div>
-                <div className={styles.followsContent}>
-                    <img className={styles.followImg} src="https://i.imgur.com/C2VpXHd.png"/>
-                    <div className={styles.userInfo}>
-                        <h4 className={styles.followName}>User's Name</h4>
-                        <h5 className={styles.followCompany}>User's Company</h5>
-                    </div>
-                </div>
-            </div>
+        <div className={styles.postList}>
+            {posts.map(postData => (
+                <Follow 
+                    key={postData._id} 
+                    user={postData.user}
+                    likes={postData.likes}
+                />
+            ))}
         </div>
-    )
+    );
 }

@@ -6,7 +6,7 @@ const EmptyState = () => (
     <div className={styles.emptyState}>No posts available.</div>
 );
 
-export default function ProfilePostList({ posts }) {
+export default function ProfilePostList({posts}) {
     // Check if posts array is empty
     if (posts.length === 0) {
         return <EmptyState />;
@@ -17,10 +17,11 @@ export default function ProfilePostList({ posts }) {
             {posts.map(postData => (
                 <ProfilePost 
                     key={postData._id} 
+                    postId={postData._id}
                     user={postData.user}
                     projectTitle={postData.projectTitle} 
                     projectDescription={postData.projectDescription} 
-                    gitHubLink={postData.gitHubLink} 
+                    githubLink={postData.githubLink} 
                     image={postData.image} 
                 />
             ))}

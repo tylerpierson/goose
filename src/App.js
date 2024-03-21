@@ -380,8 +380,8 @@ const unfollowDeveloper = async (userId, developerId, token) => {
                         setToken={setToken}
                         setUser={setUser}
                         getIndividualPost={getIndividualPost}
-                        deletePost={deletePost}
                         updatePost={updatePost}
+                        fetchPosts={fetchPosts}
                         post={post}
                     />} />
                 </Routes>
